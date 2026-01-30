@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+Dynamic Form Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a schema-driven dynamic form builder built with React 18 + TypeScript (strict mode) and styled using Tailwind CSS. The form supports:
 
-Currently, two official plugins are available:
+Nested fields and repeatable groups
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Conditional logic (showIf)
 
-## React Compiler
+Async dropdown options
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Validation pipelines (sync + async)
 
-## Expanding the ESLint configuration
+Autosave and resume
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Full keyboard navigation and accessibility compliance
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+All components are demonstrated via Storybook.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React 18+
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+TypeScript (strict mode enabled)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Vite
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Tailwind CSS
+
+Storybook
+
+Folder Structure:
+
+DynamicFormAssignment/
+├─ src/ # Form components & schema
+├─ storybook-static/ # Built Storybook files
+├─ SchemaDocumentation.md  
+└─ README.md # This file
+
+How to Run Locally
+
+1.Install dependencies:
+npm install
+
+2.Start Storybook:
+npm run storybook
+
+3.Build Storybook (for deployment/public link):
+npm run build-storybook
+
+4.Start the React app:
+npm run dev
+
+Storybook
+
+Public URL: https://dynamic-form-builder-9vct.vercel.app
+
+Includes stories for: Default, PreFilled, RepeatableGroup, ConditionalFields, AsyncSelect.
