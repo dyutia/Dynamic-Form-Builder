@@ -8,6 +8,7 @@ export type FieldType =
 
 export interface FieldSchema {
 	id: string;
+	
 	label: string;
 	type: FieldType;
 	required?: boolean;
